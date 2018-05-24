@@ -1,0 +1,43 @@
+{
+    "automock": true,
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+        "**/src/js/**/*.{js,jsx}",
+        "!**/src/js/app.js"
+    ],
+    "coverageDirectory": "<rootDir>/coverage/",
+    "coverageReporters": [
+        "text-summary",
+        "html",
+        "cobertura"
+    ],
+    "coverageThreshold": {
+        "global": {
+            "branches": 90,
+            "functions": 90,
+            "lines": 90,
+            "statements": 90
+        }
+    },
+    "coveragePathIgnorePatterns": [
+        "/node_modules/"
+    ],
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "rootDir": "../../../",
+    "setupFiles": [
+        "<rootDir>/src/config/jest/jest.setup.js"
+    ],
+    "testMatch": [
+        "<rootDir>/src/js/**/*.test.js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+        "/node_modules/"
+    ],
+    "unmockedModulePathPatterns": [
+        "enzyme",
+        "react",
+        "react-dom",
+        "react-intl"
+    ]
+}

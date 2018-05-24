@@ -1,0 +1,8 @@
+{
+  "app.title": "Black Friday Countdown Timer ({finalDate})",
+  "app.startsIn": "Starts In",
+  "app.timer.days": "Days",
+  "app.timer.hours": "Hours",
+  "app.timer.minutes": "Minutes",
+  "app.timer.seconds": "Seconds"
+}

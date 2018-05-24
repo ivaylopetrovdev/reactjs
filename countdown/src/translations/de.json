@@ -1,0 +1,8 @@
+{
+  "app.title": "Schwarzer Freitag Countdown-Timer ({finalDate})",
+  "app.startsIn": "Beginnt in",
+  "app.timer.days": "Tage",
+  "app.timer.hours": "Stunden",
+  "app.timer.minutes": "Minuten",
+  "app.timer.seconds": "Sekunden"
+}
