@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import TimerBox from './TimerBox';
-import styled from 'styled-components';
+import TimerBox from '../TimerBox/TimerBox';
+import { TimerWrapper } from './Timer.styles';
 
 /**
- * Timer's component - timer responsible for:
- * - visualizing counter's date
- * - calculating remaining time
- * - validating values for leading zeroes
- * inclides also CSS-in-JS styles
- * @accepts timer's final date
- * @returns html of the counter - wrapper and counter elements showing values via pure component.
+ * @class
+ * @classdesc Timer component
  */
-export default class Timer extends Component {
+class Timer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,13 +17,38 @@ export default class Timer extends Component {
 				seconds: 0,
 			},
 		};
+		this.intervalId = null;
 	}
 
 	/**
-     * Method responsible for calculating remaining time, split time parts in separate
+	 * @description Lifecycle method - responsible for initial calculating of remaining time
+	 */
+	componentWillMount() {
+		this.calculateTimer(this.props.finalDate);
+	}
+
+	/**
+	 * @description Lifecycle method responsible for triggering timer so calculation of remaining time can be correct
+	 */
+	componentDidMount() {
+		if (!this.intervalId) {
+			this.intervalId = setInterval(() => this.calculateTimer(this.props.finalDate), 1000);
+		}
+	}
+
+	/**
+	 * @description Lifecycle method responsible for removing interval reference
+	 */
+	componentWillUnmount() {
+		clearInterval(this.intervalId);
+		this.intervalId = null;
+	}
+
+	/**
+	 * @description Method responsible for calculating remaining time, split time parts in separate
 	 * values that can be used and update them into component's state
-     * @accepts countdownTime - timer's final date
-     */
+	 * @param {string} - countdownTime - timer's final date
+	 */
 	calculateTimer(countdownTime) {
 		const { timer } = this.state;
 		const timeLeft = Date.parse(countdownTime) - Date.parse(new Date());
@@ -53,24 +73,10 @@ export default class Timer extends Component {
 	}
 
 	/**
-	 * Lifecycle method responsible for initial calculating of remaining time
+	 * @description Method responsible for validating value about leading zero
+	 * @param {number} number - value that needs to be checked
+	 * @returns {number|string} - validated value
 	 */
-	componentWillMount() {
-		this.calculateTimer(this.props.finalDate);
-	}
-
-	/**
-     * Lifecycle method responsible for triggering timer so calculation of remaining time can be correct
-     */
-	componentDidMount() {
-		setInterval(() => this.calculateTimer(this.props.finalDate), 1000);
-	}
-
-	/**
-     * Method responsible for validating value for leading zero
-     * @accepts 'number' - desired value
-     * @returns validated value
-     */
 	leadingZero(number) {
 		return number < 10 ? `0${number}` : number;
 	}
@@ -89,8 +95,4 @@ export default class Timer extends Component {
 	}
 }
 
-const TimerWrapper = styled.div`
-	display: flex;
-	flex: 1 1 100%;
-	max-width: 100%;
-`;
+export default Timer;

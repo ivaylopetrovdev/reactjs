@@ -3,7 +3,7 @@ import App from './App';
 jest.unmock('./App');
 
 import React from 'react';
-import { mountWithIntl, shallowWithIntl } from '../../utils/enzyme-test-helper';
+import { mountWithIntl, shallowWithIntl } from '../../../utils/enzyme-test-helper';
 
 describe('App (component) test', () => {
 	it('renders without crashing', () => {
