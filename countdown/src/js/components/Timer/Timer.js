@@ -53,8 +53,8 @@ export default class Timer extends Component {
 	}
 
 	/**
-     * Lifecycle method responsible for initial calculating of remaining time
-     */
+	 * Lifecycle method responsible for initial calculating of remaining time
+	 */
 	componentWillMount() {
 		this.calculateTimer(this.props.finalDate);
 	}
