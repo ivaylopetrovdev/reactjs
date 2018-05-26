@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// importing App component
-import App from './components/App';
-
 // importing internationalisation files
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
@@ -23,8 +20,8 @@ const messages = {
 // language without region code
 const language = navigator.language.split(/[-_]/)[0];
 
-// fetch main element where application should be placed
-const app = document.getElementById('app');
+// importing App component
+import App from './components/App/App';
 
 function renderApp() {
 	return (
@@ -34,4 +31,4 @@ function renderApp() {
 	);
 }
 
-ReactDOM.render(renderApp(), app);
+ReactDOM.render(renderApp(), document.getElementById('app'));

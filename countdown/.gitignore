@@ -6,6 +6,12 @@ node_modules
 # testing
 coverage
 
+# documentation
+documentation
+
+# production
+build
+
 # misc
 .DS_Store
 .idea
