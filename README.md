@@ -24,3 +24,6 @@ A collection of React JS magic tricks.
 
 ### I. `React Challenge (Part #1) - countdown`
 [Demo link](https://ivaylopetrovdev.github.io/reactjs/countdown/build/)
+
+### II. `React Challenge (Part #2) - search results`
+[Demo link](https://ivaylopetrovdev.github.io/reactjs/search-results/build/)
