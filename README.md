@@ -2,14 +2,19 @@ Quick start (for all projects)
 ============
 
 ```bash
-# install the dependencies with npm
-$ npm install
-
-# run the project and run it on localhost:8000 (Chrome/Safari)"
+# installs dependencies, update them, starts a local web server. you can run the project on 
+localhost:8080 (Chrome/Safari)"
 $ npm start
+
+# run tests with coverage (optional)"
+$ npm run test:cov
 
 # build the project (optional)"
 $ npm run build
+
+# build simple project's documentation (optional)" - it will create 'documentation' folder in the 
+project
+$ npm run docs
 ```
 
 

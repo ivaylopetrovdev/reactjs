@@ -6,9 +6,8 @@
   "scripts": {
     "start": "npm prune && npm install && npm update && webpack-dev-server --progress --colors --config webpack.dev.js --mode development",
     "test:cov": "jest --coverage=true --silent=false --colors --config src/config/jest/jest.config.json",
-    "test:watch": "jest --coverage=true --watch --silent=false --colors --config src/config/jest/jest.config.json",
-    "lint": "eslint --fix src/js/**",
-    "build": "webpack --progress --colors --config webpack.prod.js --mode production"
+    "build": "webpack --progress --colors --config webpack.prod.js --mode production",
+    "docs": "npm i -g jsdoc && jsdoc src -r -d documentation"
   },
   "author": "Ivaylo Petrov",
   "repository": "https://github.com/ivaylopetrovdev/reactjs",
@@ -50,7 +49,7 @@
     "jest-styled-components": "^5.0.1",
     "lodash": "^4.6.1",
     "react-test-renderer": "^16.4.0",
-    "webpack": "^4.0.1",
+    "webpack": "^4.9.1",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0",
     "webpack-merge": "^4.1.2"

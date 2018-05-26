@@ -13,10 +13,7 @@ addLocaleData([...en, ...de]);
 const language = navigator.language.split(/[-_]/)[0];
 
 // importing App component
-import App from './components/App';
-
-// fetch main element where application should be placed
-const app = document.getElementById('app');
+import App from './components/App/App';
 
 function renderApp() {
 	return (
@@ -26,4 +23,4 @@ function renderApp() {
 	);
 }
 
-ReactDOM.render(renderApp(), app);
+ReactDOM.render(renderApp(), document.getElementById('app'));

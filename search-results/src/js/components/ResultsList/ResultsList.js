@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ResultBox from '../ResultBox/ResultBox';
 
-export default class ResultsList extends Component {
+/**
+ * @class
+ * @classdesc ResultsList component
+ * @param {Array} items - collection of results from the search that needs to be shown
+ */
+class ResultsList extends Component {
 	render() {
 		const { items } = this.props;
 
@@ -15,3 +20,5 @@ export default class ResultsList extends Component {
 ResultsList.propTypes = {
 	items: PropTypes.array.isRequired,
 };
+
+export default ResultsList;
