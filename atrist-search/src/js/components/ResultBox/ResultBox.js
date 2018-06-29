@@ -28,7 +28,7 @@ class ResultBox extends PureComponent {
 						<h3><a href={item.artist.facebook_page_url} target="_blank">{item.artist.facebook_page_url}</a></h3>
 
 						<div className="tour-details">
-							date +, date -,
+							<h4>Events</h4>
 						{(
 							item.events.length ?
 								item.events.map(event => {

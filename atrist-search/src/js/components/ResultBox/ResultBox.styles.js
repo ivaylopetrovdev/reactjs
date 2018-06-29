@@ -17,6 +17,15 @@ export const ResultWrapper = styled.div`
 	@media ${breakpoints.tablet} {
 		flex-direction: row;
 	}
+	
+	a {
+		color: silver;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 `;
 
 /**
@@ -33,12 +42,6 @@ export const ResultImages = styled.div`
 
 		max-width: 50%;
 	}
-
-	@media ${breakpoints.laptop} {
-		flex: 1 30%;
-
-		max-width: 30%;
-	}
 `;
 
 /**
@@ -47,14 +50,6 @@ export const ResultImages = styled.div`
 export const Image = styled.img`
 	width: 100%;
 	max-width: 100%;
-
-	&:first-child {
-		margin-bottom:5px;
-
-		@media ${breakpoints.tablet} {
-			margin-bottom:10px;
-		}
-	}
 `;
 
 /**
@@ -78,10 +73,10 @@ export const ResultDetails = styled.div`
 	}
 
 	@media ${breakpoints.laptop} {
-		flex: 1 70%;
+		flex: 1 50%;
 		flex-direction: row;
 
-		max-width: 70%;
+		max-width: 50%;
 		padding: 20px;
 	}
 `;
@@ -111,6 +106,12 @@ export const ResultInfo = styled.div`
 
 		font-weight: 500;
 	}
+	
+	h4 {
+		padding-top: 20px;
+
+		font-weight: 700;
+	}
 
 	.label-cell  { 
 		width: 30%;
@@ -128,17 +129,32 @@ export const ResultInfo = styled.div`
 
 		display: flex;
 		padding: 0;
+		border: 1px solid #000000;
 		margin: 20px 0 0;
 
 		.Rtable-row {
 			display: flex;
 			width: 100%;
+			
+			&:nth-child(even) {
+				background-color: #f2f2f2; 
+			}
+			
+			&:first-of-type {
+				background: #000000;
+				
+				color: #ffffff;
+				
+				& > .label-cell {			
+					color: #ffffff;
+				}
+			}
 
 			.Rtable-cell {
 				flex-grow: 1;
 
 				overflow: hidden; // Or flex might break
-				padding: 3px 0;
+				padding: 3px 10px;
 
 				box-sizing: border-box;
 				list-style: none;
@@ -162,115 +178,4 @@ export const ResultInfo = styled.div`
 		.info-cell  { width: 70%; }
 	}
 
-	@media ${breakpoints.laptop} {
-		flex: 1 60%;
-		flex-direction: column;
-
-		padding-right:20px;
-		max-width: 60%;
-	}
-`;
-
-/**
- * Result box styles :: ResultAdditionalInfo styles
- */
-export const ResultAdditionalInfo = styled.div`
-	flex-direction: row;
-
-	display: flex;
-
-	& > * {
-		display: block;
-		margin: 0;
-	}
-
-	.additional-row {
-		display: flex;
-		min-height:44px;
-		border-bottom: 1px solid #c0cad4;
-
-		&.days {
-			align-items: center;
-			justify-content: center;
-
-			display: flex;
-
-			font-size: 20px;
-			font-weight: 700;
-		}
-	}
-
-	@media ${breakpoints.mobileS} {
-		flex-direction: column;
-
-		max-width: 100%;
-		padding-top: 10px;
-	}
-
-	@media ${breakpoints.tablet} {
-		max-width: 100%;
-		padding-top: 15px;
-	}
-
-	@media ${breakpoints.laptop} {
-		flex: 1 40%;
-		flex-direction: column;
-
-		max-width: 40%;
-		padding-top: 0px;
-	}
-`;
-
-/**
- * Result box styles :: AmountWrapper styles
- */
-export const AmountWrapper = styled.div`
-	flex-direction: column;
-	flex: 1;
-
-	display: flex;
-	margin-bottom: 6px;   
-`;
-
-/**
- * Result box styles :: AmountValue styles
- */
-export const AmountValue = styled.div`
-	flex-direction: row;
-	flex: 1 100%;
-
-	display: flex;
-	max-width: 100%;
-
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-
-	&.align-left {
-		align-self: flex-start;
-	}
-
-	&.align-right {
-		align-self: flex-end;
-	}
-`;
-
-/**
- * Result box styles :: AmountLabel styles
- */
-export const AmountLabel = styled.div`
-	flex-direction: row;
-	flex: 1 100%;
-
-	display: flex;
-	max-width: 100%;
-	margin:0px 0px 2px;
-
-    &.align-left {
-		align-self: flex-start;
-	}
-
-	&.align-right {
-		align-self: flex-end;
-	}   
 `;

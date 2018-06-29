@@ -30,9 +30,7 @@ class SearchBox extends Component {
 	}
 
 	hydrateStateWithLocalStorage() {
-		// if the key exists in localStorage
 		if (localStorage.hasOwnProperty('query')) {
-			// get the key's value from localStorage
 			const cachedQuery = localStorage.getItem('query');
 
 			if (cachedQuery) {
@@ -81,8 +79,6 @@ class SearchBox extends Component {
 	}
 
 	render() {
-		const { query } = this.state;
-
 		return (
 			<form>
 				<input

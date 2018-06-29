@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SearchBox from '../SearchBox/SearchBox';
 import { breakpoints } from '../../../utils/breakpoints';
 
 /**
@@ -39,38 +40,38 @@ export const Header = styled.div`
 /**
  * General styles :: Dropdown styles
  */
-export const Dropdown = styled.select.attrs({
-	name: 'sortingchooser',
-})`
-	flex: 1 14em;
+export const SearchBoxStyle = styled.div`
+	& > form > input {
+		flex: 1 14em;
 
-	width: 14em;
-	max-width: 14em;
-	height: 3em;
-	padding: 0px 10px;
-`;
+		width: 14em;
+		max-width: 14em;
+		height: 3em;
+		padding: 0px 10px;
+		
+		color: #76828e;
 
-/**
- * General styles :: DropdownTitle styles
- */
-export const DropdownTitle = styled.div`
-	flex: 1 100%;
-	align-items: center;
-	justify-content: flex-end;
-
-	display: flex;
-	height: 3em;
-	padding-right: 10px;
-
-	color: #76828e;
-
-	font-weight: bold;
+		font-size: 14px;
+		font-weight: bold;
+	}
 `;
 
 /**
  * General styles :: LoadingWrapper styles
  */
 export const LoadingWrapper = styled.div`
+	align-items: center;
+	justify-content: center;
+
+	display: flex;
+	height: 4em;
+	padding: 50px;
+`;
+
+/**
+ * General styles :: NoResultsWrapper styles
+ */
+export const NoResultsWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import ResultBox from '../ResultBox/ResultBox';
 import SearchBox from '../SearchBox/SearchBox';
-import { forceCheck } from 'react-lazyload';
-import { sortByString } from '../../../utils/sorting';
-import { PageContent, Header, DropdownTitle, Dropdown, LoadingWrapper } from './App.styles';
+import { PageContent, Header, SearchBoxStyle, LoadingWrapper, NoResultsWrapper } from './App.styles';
 
 /**
  * @class
@@ -32,7 +30,7 @@ class App extends Component {
 			});
 		} else {
 			this.setState({
-				results: 'no results found',
+				results: 'No results found. Please, try with another artist',
 			});
 		}
 	}
@@ -47,7 +45,9 @@ class App extends Component {
 		return (
 			<PageContent>
 				<Header>
-					<SearchBox handleChange={this.handleArtistChange} />
+					<SearchBoxStyle>
+						<SearchBox handleChange={this.handleArtistChange} />
+					</SearchBoxStyle>
 				</Header>
 				{(
 					isLoading ?
@@ -57,7 +57,7 @@ class App extends Component {
 							</LoadingWrapper>
 						) : (results && typeof results === 'object') ?
 							(<ResultBox item={results} />)
-						: <div>{results}</div>
+						: <NoResultsWrapper>{results}</NoResultsWrapper>
 				)}
 			</PageContent>
 		);
