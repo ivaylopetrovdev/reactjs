@@ -27,3 +27,6 @@ A collection of React JS magic tricks.
 
 ### II. `React Challenge (Part #2) - search results`
 [Demo link](https://ivaylopetrovdev.github.io/reactjs/search-results/build/)
+
+### III. `React Challenge (Part #3) - artist results`
+[Demo link](https://ivaylopetrovdev.github.io/reactjs/artist-results/build/)
