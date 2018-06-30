@@ -10,8 +10,8 @@ const API_URL = 'https://rest.bandsintown.com/artists/';
  */
 class SearchBox extends Component {
 	/**
-	 * Create application.
-	 * @param {Object} props - application props.
+	 * Create component.
+	 * @param {Object} props - component props.
 	 */
 	constructor(props) {
 		super(props);
@@ -25,10 +25,18 @@ class SearchBox extends Component {
 		this.getArtistInfo = this.getArtistInfo.bind(this);
 	}
 
+	/**
+	 * @description Lifecycle method responsible for triggering check in LocalStorage.
+	 * if value in LocalStorage is present, then fetching data will be triggered
+	 */
 	componentDidMount() {
 		this.hydrateStateWithLocalStorage();
 	}
 
+	/**
+	 * @description Method responsible for checking last value entered in LocalStorage
+	 * and updating the state if presented
+	 */
 	hydrateStateWithLocalStorage() {
 		if (localStorage.hasOwnProperty('query')) {
 			const cachedQuery = localStorage.getItem('query');
@@ -45,6 +53,10 @@ class SearchBox extends Component {
 		}
 	}
 
+	/**
+	 * @description Method responsible for storing the query value in LocalStorage and
+	 * triggering fetching of artist's details
+	 */
 	handleInputChange() {
 		const { timerId } = this.state;
 		const { value } = this.search;
@@ -62,6 +74,10 @@ class SearchBox extends Component {
 		});
 	}
 
+	/**
+	 * @description Method responsible for fetching of artist's details - main details and events
+	 * @return {Object} - artist details / false
+	 */
 	getArtistInfo() {
 		const { query } = this.state;
 
@@ -82,6 +98,7 @@ class SearchBox extends Component {
 		return (
 			<form>
 				<input
+					id="searchBox"
 					type="text"
 					placeholder="Search for..."
 					ref={input => this.search = input}

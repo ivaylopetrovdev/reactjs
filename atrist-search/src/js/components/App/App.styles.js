@@ -57,18 +57,6 @@ export const SearchBoxStyle = styled.div`
 `;
 
 /**
- * General styles :: LoadingWrapper styles
- */
-export const LoadingWrapper = styled.div`
-	align-items: center;
-	justify-content: center;
-
-	display: flex;
-	height: 4em;
-	padding: 50px;
-`;
-
-/**
  * General styles :: NoResultsWrapper styles
  */
 export const NoResultsWrapper = styled.div`

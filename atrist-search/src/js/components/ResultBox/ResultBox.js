@@ -60,7 +60,7 @@ class ResultBox extends PureComponent {
 										</div>
 									);
 								})
-								: null
+								: <div>No events available</div>
 						)}
 						</div>
 					</ResultInfo>

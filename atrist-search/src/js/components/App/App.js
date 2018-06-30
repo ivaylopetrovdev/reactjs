@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResultBox from '../ResultBox/ResultBox';
 import SearchBox from '../SearchBox/SearchBox';
-import { PageContent, Header, SearchBoxStyle, LoadingWrapper, NoResultsWrapper } from './App.styles';
+import { PageContent, Header, SearchBoxStyle, NoResultsWrapper } from './App.styles';
 
 /**
  * @class
@@ -15,14 +15,16 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isLoading: false,
-			error: null,
-			results: null,
+			results: 'Please, enter an artist\'s name',
 		};
 
 		this.handleArtistChange = this.handleArtistChange.bind(this);
 	}
 
+	/**
+	 * @description Method responsible for updating the app's state with results value
+	 * @param {Object} artistInfo - artist's details
+	 */
 	handleArtistChange(artistInfo) {
 		if (artistInfo) {
 			this.setState({
@@ -36,11 +38,7 @@ class App extends Component {
 	}
 
 	render() {
-		const { results, isLoading, error } = this.state;
-
-		if (error && error.length) {
-			return <p>{error}</p>;
-		}
+		const { results } = this.state;
 
 		return (
 			<PageContent>
@@ -50,13 +48,8 @@ class App extends Component {
 					</SearchBoxStyle>
 				</Header>
 				{(
-					isLoading ?
-						(
-							<LoadingWrapper>
-								We are looking for matches...
-							</LoadingWrapper>
-						) : (results && typeof results === 'object') ?
-							(<ResultBox item={results} />)
+					(results && typeof results === 'object') ?
+						(<ResultBox item={results} />)
 						: <NoResultsWrapper>{results}</NoResultsWrapper>
 				)}
 			</PageContent>
