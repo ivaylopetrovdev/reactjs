@@ -6,7 +6,7 @@ Quick start (for all projects)
 localhost:8080 (Chrome/Safari)"
 $ npm start
 
-# run tests with coverage (optional)"
+# run tests with coverage (optional for |-|||)"
 $ npm run test:cov
 
 # build the project (optional)"
@@ -30,3 +30,6 @@ A collection of React JS magic tricks.
 
 ### III. `React Challenge (Part #3) - artist results`
 [Demo link](https://ivaylopetrovdev.github.io/reactjs/artist-results/build/)
+
+### IV. `React Challenge (Part #4) - results redux`
+[Demo link](https://ivaylopetrovdev.github.io/reactjs/results-redux/build/)
