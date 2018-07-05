@@ -9,7 +9,7 @@ module.exports = {
 		app: ['babel-polyfill', './app'],
 	},
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, 'build/'),
 		filename: 'bundle.js',
 		publicPath: '/',
 	},
