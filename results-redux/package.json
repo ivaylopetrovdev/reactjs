@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npm prune && npm install && npm update && webpack-dev-server --progress --colors --config webpack.dev.js --mode development",
-    "build": "set NODE_ENV=production & webpack --progress --colors --config webpack.prod.js --mode production",
+    "build": "webpack --progress --colors --config webpack.prod.js --mode production",
     "docs": "npm i -g jsdoc && jsdoc app -r -d documentation"
   },
   "author": "Ivaylo Petrov",
