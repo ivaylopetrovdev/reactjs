@@ -32,3 +32,5 @@ A collection of React JS magic tricks.
 [Demo link](https://ivaylopetrovdev.github.io/reactjs/artist-results/build/)
 
 ### IV. `React Challenge (Part #4) - results redux`
+
+### V. `React Challenge (Part #5) - results hooks`
